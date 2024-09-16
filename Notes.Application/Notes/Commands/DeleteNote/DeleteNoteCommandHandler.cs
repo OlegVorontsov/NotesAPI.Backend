@@ -20,9 +20,9 @@ namespace Notes.Application.Notes.Commands.DeleteNote
                 CancellationToken cancellationToken)
         {
             var entity = await _dbContext.Notes.FindAsync(new object[] { request.Id }, cancellationToken);
-            if (entity is null || entity.UserId !=request.UserId)
+            if (entity is null || entity.UserId != request.UserId)
             {
-                throw new NotFoundException(nameof(Note), request.Id));
+                throw new NotFoundException(nameof(Note), request.Id);
             }
             _dbContext.Notes.Remove(entity);
             await _dbContext.SaveChangesAsync(cancellationToken);
