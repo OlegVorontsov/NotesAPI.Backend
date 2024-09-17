@@ -7,6 +7,5 @@ namespace Notes.Application.Notes.Queries.GetNoteDetails
     {
         public Guid UserId { get; set; }
         public Guid Id { get; set; }
-
     }
 }

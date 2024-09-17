@@ -8,6 +8,7 @@ using Notes.Application.Interfaces;
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using Notes.Rersistance.EntityTypeConfigurations;
+using Notes.WebApi.Middleware;
 
 namespace Notes.WebApi
 {
@@ -37,7 +38,6 @@ namespace Notes.WebApi
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -45,6 +45,7 @@ namespace Notes.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCustomExceptionHandler();
             app.UseRouting();
             app.UseHttpsRedirection();
             app.UseCors("AlllowAll");
