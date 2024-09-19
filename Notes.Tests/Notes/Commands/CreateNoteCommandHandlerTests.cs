@@ -1,4 +1,5 @@
 ﻿using Common;
+using Microsoft.EntityFrameworkCore;
 using Notes.Application.Notes.Commands.CreateNote;
 using System.Threading;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Notes.Tests.Notes.Commands
                 {
                     Title = noteName,
                     Details = noteDetails,
-                    UserId = NotesContextFactory.UseAId
+                    UserId = NotesContextFactory.UserAId
                 },
                 CancellationToken.None);
             // Assert

@@ -7,8 +7,8 @@ namespace Common
 {
     public static class NotesContextFactory
     {
-        public static Guid UseAId = Guid.NewGuid();
-        public static Guid UseBId = Guid.NewGuid();
+        public static Guid UserAId = Guid.NewGuid();
+        public static Guid UserBId = Guid.NewGuid();
 
         public static Guid NoteIdForDelete = Guid.NewGuid();
         public static Guid NoteIdForUpdate = Guid.NewGuid();
@@ -24,39 +24,39 @@ namespace Common
             (
                 new Note
                 {
-                    CreationDate = DateTime.Now,
+                    CreationDate = DateTime.Today,
                     Details = "Details1",
                     EditDate = null,
                     Id = Guid.Parse("DC965839-8FF5-4FA2-A60D-8D5D71A4498B"),
                     Title = "Title1",
-                    UserId = UseAId
+                    UserId = UserAId
                 },
                 new Note
                 {
-                    CreationDate = DateTime.Now,
+                    CreationDate = DateTime.Today,
                     Details = "Details2",
                     EditDate = null,
-                    Id = Guid.Parse("3AC22CAF-5997-4C3C-BA84-1E2F7495C21E"),
+                    Id = Guid.Parse("BDEF47B9-7944-44F5-82F5-A1D788E731C4"),
                     Title = "Title2",
-                    UserId = UseBId
+                    UserId = UserBId
                 },
                 new Note
                 {
-                    CreationDate = DateTime.Now,
+                    CreationDate = DateTime.Today,
                     Details = "Details3",
                     EditDate = null,
                     Id = NoteIdForDelete,
                     Title = "Title3",
-                    UserId = UseAId
+                    UserId = UserAId
                 },
                 new Note
                 {
-                    CreationDate = DateTime.Now,
+                    CreationDate = DateTime.Today,
                     Details = "Details4",
                     EditDate = null,
                     Id = NoteIdForUpdate,
                     Title = "Title4",
-                    UserId = UseBId
+                    UserId = UserBId
                 }
             );
             context.SaveChanges();
