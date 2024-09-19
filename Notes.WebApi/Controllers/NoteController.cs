@@ -13,8 +13,10 @@ using System.Threading.Tasks;
 
 namespace Notes.WebApi.Controllers
 {
+    //[ApiVersion("1.0")]
+    [ApiVersionNeutral]
     [Produces("application/json")]
-    [Route("api/[controller]")]
+    [Route("api/{version:apiVersion}/[controller]")]
     [Authorize]
     public class NoteController : BaseController
     {
